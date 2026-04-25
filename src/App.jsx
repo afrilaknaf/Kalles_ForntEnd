@@ -5,6 +5,7 @@ import Footer from './Compoents/Footer'
 import Home from './Pages/Home'
 import Login from './Pages/Login'
 import Signup from './Pages/Signup'
+import MobileMenu from './Compoents/MobileMenu'
 
 function App() {
 
@@ -17,7 +18,8 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/signup' element={<Signup/>}/>
       </Routes>
-      {/* <Footer/> */}
+      <MobileMenu/>
+      <Footer/>
     </>
   )
 }

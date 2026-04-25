@@ -10,7 +10,7 @@ export default function Footer() {
 
     return (
         <>
-            <div className="w-full lg:h-[400px] bg-[#f6f6f8] flex flex-col lg:flex-row justify-center items-center gap-5 lg:gap-15">
+            <div className="w-full lg:h-[400px] bg-[#f6f6f8] flex flex-col lg:flex-row justify-center items-center gap-5 lg:gap-10">
 
                 {/* Section 1 */}
                 <div className={`w-full lg:w-[300px] flex ${toggle1 ? "flex-col" : "flex"} justify-between lg:justify-start lg:flex-col px-5 lg:px-0`}>
@@ -62,7 +62,7 @@ export default function Footer() {
                 </div>
 
                 {/* Section 2 */}
-                <div className={`w-full lg:w-[150px] ${toggle2 ? "flex-col" : "flex"} justify-between lg:flex-col px-5 lg:px-0`}>
+                <div className={`w-full lg:w-[130px] ${toggle2 ? "flex-col" : "flex"} justify-between lg:flex-col px-5 lg:px-0`}>
                     {
                         toggle2 ? <>
                             <div className="w-full h-auto flex justify-between">
@@ -122,7 +122,7 @@ export default function Footer() {
                 </div>
 
                 {/* Section 4 */}
-                <div className={`w-full lg:w-[150px]  ${toggle4 ? "flex-col" : "flex"} justify-between lg:flex-col px-5 lg:px-0`}>
+                <div className={`w-full lg:w-[130px]  ${toggle4 ? "flex-col" : "flex"} justify-between lg:flex-col px-5 lg:px-0`}>
 
                     {
                         toggle4 ? <>
@@ -177,9 +177,9 @@ export default function Footer() {
                         Subscribe to our newsletter and get <br /> 10% off your first purchase
                     </p>
 
-                    <div className={`w-[300px] p-2 border mt-2 rounded-full ${toggle5 ? "block" : "hidden"} lg:flex`}>
+                    <div className={`w-[330px] lg:w-[300px] p-2 border mt-2 rounded-full ${toggle5 ? "block" : "hidden"} lg:flex`}>
                         <input type="text" placeholder="Enter Email Address" className="flex-1 outline-none" />
-                        <button className="p-3 text-white bg-black rounded-full">Subscribe</button>
+                        <button className="p-2 lg:p-3 text-white bg-black rounded-full">Subscribe</button>
                     </div>
                 </div>
             </div>
