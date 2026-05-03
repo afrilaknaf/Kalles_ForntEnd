@@ -6,20 +6,35 @@ import Home from './Pages/Home'
 import Login from './Pages/Login'
 import Signup from './Pages/Signup'
 import MobileMenu from './Compoents/MobileMenu'
+import Products from './Pages/Products'
+import AOS from "aos"
+import "aos/dist/aos.css"
+import { useEffect } from "react"
+
 
 function App() {
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // animation speed
+      once: false      // run only once
+    })
+  }, [])
 
   return (
     <>
-      <Navbar/>
-      <Routes>
-        <Route index  element={<Home/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/signup' element={<Signup/>}/>
-      </Routes>
-      <MobileMenu/>
-      <Footer/>
+      <div className='overflow-x-hidden'>
+        <Navbar />
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/products' element={<Products />} />
+        </Routes>
+        <Footer />
+        <MobileMenu />
+
+      </div>
     </>
   )
 }

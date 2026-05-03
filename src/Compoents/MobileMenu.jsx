@@ -3,8 +3,9 @@ export default function MobileMenu() {
 
     return (
         <>
-            <div className="w-[100%] relative top-0 block lg:hidden ">
-                <div className="w-[100%] h-[50px] flex justify-between items-center px-2 bg-[#ffffff] fixed bottom-0">
+            <div className="overflow-hidden">
+                <div className="w-[100%] relative z-100 overflow-hidden top-0 block lg:hidden ">
+                <div className="w-[100%] h-[50px]  flex justify-around items-center px-2 bg-[#ffffff] fixed bottom-0">
                     <div className="flex flex-col gap-0 items-center text-center">
                         <span><i class="ri-gallery-view-2"></i></span>
                         <h1 className="text-sm">Shop</h1>
@@ -26,6 +27,7 @@ export default function MobileMenu() {
                         <h1 className="text-sm">Search</h1>
                     </div>
                 </div>
+            </div>
             </div>
         </>
     )
