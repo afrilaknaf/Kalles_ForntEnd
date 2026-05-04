@@ -11,12 +11,14 @@ export default function Products() {
 
     if(isError) return <h1>Something Wents Wrong</h1>
 
+    let watches = data.data.filter((item)=>( item.category === "watch"));
+
 
     return (
         <>
             <div className="w-full  h-auto p-4 flex flex-wrap justify-center items-center gap-5">
                 {
-                    data.data.map((item, index) => (
+                    watches.map((item, index) => (
                         <div data-aos="fade-up"
                             data-aos-duration="1000" key={index} className="w-[full] md:w-[315px]  h-auto p-3 hover:border hover:border-black/30 rounded-lg hover:shadow-lg relative top-0 group">
                             <img src={item.images} loading="lazy" className="w-full h-auto object-cover" alt="" />

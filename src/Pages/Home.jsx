@@ -5,7 +5,10 @@ import Cookies from "js-cookie"
 import CryptoJs from "crypto-js"
 import { useNavigate } from "react-router-dom"
 import HomeProducts from "../Compoents/HomeProducts"
-
+import PremiumProducts from "./PremiumProducts"
+import Car from "../assets/Car.svg"
+import Gift from "../assets/Gift.svg"
+import Diamond from "../assets/Diamond.svg"
 
 
 
@@ -80,7 +83,8 @@ export default function Home() {
 
                     <a href="/products">
                         <div className="relative top-0" >
-                            <img src="https://kalles-5-3.myshopify.com/cdn/shop/files/women-collection.jpg?v=1765269463&width=600" alt="" className="w-full lg:w-[100%] h-[250px] md:h-[615px] object-cover hover:scale-[1.1] transition-all duration-500" />
+                            {/* <img src="https://kalles-5-3.myshopify.com/cdn/shop/files/women-collection.jpg?v=1765269463&width=600" alt="" className="w-full lg:w-[100%] h-[250px] md:h-[615px] object-cover hover:scale-[1.1] transition-all duration-500" /> */}
+                            <video src="https://patek-res.cloudinary.com/video/upload/f_auto:video/dfsmedia/0906caea301d42b3b8bd23bd656d1711/266930-source/pp-5373p-001-screen-8-9-product-loop" className="w-full lg:w-[100%] h-[250px] md:h-[615px] object-cover hover:scale-[1.1] transition-all duration-500" autoPlay muted loop></video>
                             <h1 onClick={() => navigate("/products")} className="absolute bottom-0 w-auto h-auto p-3 m-2 bg-white text-black hover:bg-black hover:text-white transition-all start-[40%] lg:start-[43%]">GetItems</h1>
                         </div>
                     </a>
@@ -119,7 +123,38 @@ export default function Home() {
 
             <HomeProducts/>
 
+                <div>
+                    <img src="https://patek-res.cloudinary.com/dfsmedia/0906caea301d42b3b8bd23bd656d1711/6212-51883" alt="" className="w-full h-[600px] object-cover"/>
+                </div>
 
+            <PremiumProducts/>
+
+
+
+            <div className="w-full h-auto md:h-[300px]  bg-[#f8f8f8] flex flex-col md:flex-row justify-center items-center gap-5 md:gap-2">
+                <div className="w-full h-auto flex flex-col justify-center items-center">
+                    <img src={Car} className="w-[70px] h-[70px]" alt="" />
+                    <h1 className="font-bold">FREE SHIPPING</h1>
+                    <p className="text-[#8c8c8c] px-5 text-center">Whether it's a sofa delivery's on the house.</p>
+                </div>
+
+                <div className="w-full h-auto flex flex-col justify-center items-center">
+                    <img src={Gift} className="w-[70px] h-[70px]" alt="" />
+                    <h1 className="font-bold">PREMIUM DESIGN</h1>
+                    <p className="text-[#8c8c8c] px-5 text-center">Shop zillions of finds, with new arrivals added daily.</p>
+                </div>
+
+                <div className="w-full h-auto flex flex-col justify-center items-center">
+                    <img src={Diamond} className="w-[50px] h-[50px]" alt="" />
+                    <h1 className="font-bold">BEAUTIFUL GIFT WRAPPING</h1>
+                    <p className="text-[#8c8c8c] px-5 text-center">Use the Credit Card to save on your order over $50.</p>
+                </div>
+            </div>
+
+            <div>
+                <h1 className="text-3xl font-bold">Latest From Our Blog</h1>
+                <p>The freshest and most exciting news</p>
+            </div>
         </>
     )
 }

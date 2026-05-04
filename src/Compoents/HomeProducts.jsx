@@ -12,8 +12,10 @@ export default function HomeProducts() {
 
     return (
         <>
-            <h1 className="text-3xl font-bold text-center m-5">New Arrivals</h1>
-            <p className="w-full p-3 text-center text-lg text-[#8c8c8c]">Our new arrivals bring together innovation and sophistication in every detail. Crafted for those who value both fashion and function, these watches are made to leave a lasting impression.</p>
+            <div className="w-full h-auto flex justify-center items-center flex-col mt-5">
+                <h1 className="text-3xl font-bold text-center m-5">New Arrivals</h1>
+                <p className="w-full md:w-[800px] p-3 text-center text-lg text-[#8c8c8c]">Our new arrivals bring together innovation and sophistication in every detail. Crafted for those who value both fashion and function, these watches are made to leave a lasting impression.</p>
+            </div>
 
             {
                 isLoading ? <Loading /> : <>
@@ -43,6 +45,8 @@ export default function HomeProducts() {
                     </div>
                 </>
             }
+
+            <div className="flex justify-center items-center m-5"><button className="text-center w-[150px] h-[40px] bg-black text-white rounded-lg">More Products</button></div>
         </>
     )
 }

@@ -10,6 +10,7 @@ import Products from './Pages/Products'
 import AOS from "aos"
 import "aos/dist/aos.css"
 import { useEffect } from "react"
+import Preimum from './Compoents/Preimum'
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/products' element={<Products />} />
+          <Route path='/preimum' element={<Preimum/>} />
         </Routes>
         <Footer />
         <MobileMenu />
