@@ -36,8 +36,8 @@ export default function Navbar() {
                     <h1 className="text-3xl font-extrabold">Kalles</h1>
 
                     <ul className="flex gap-5 mt-4 block max-sm:hidden max-md:hidden max-lg:hidden">
-                        <li className="text-[18px] font-normal hover:text-[#C91F28] transition-all">Home</li>
-                        <li className="text-[18px] font-normal hover:text-[#C91F28] transition-all">Products</li>
+                        <li onClick={()=>navigate("/")} className="text-[18px] font-normal hover:text-[#C91F28] transition-all">Home</li>
+                        <li onClick={()=>navigate("/products")} className="text-[18px] font-normal hover:text-[#C91F28] transition-all">Products</li>
                         <li className="text-[18px] font-normal hover:text-[#C91F28] transition-all">Sale</li>
                         <li className="text-[18px] font-normal hover:text-[#C91F28] transition-all">Blog</li>
                         <li className="text-[18px] font-normal hover:text-[#C91F28] transition-all">Contact</li>

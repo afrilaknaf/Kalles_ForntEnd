@@ -3,6 +3,12 @@ import Videos from "../assets/Wacth.webm"
 import banner from "../assets/Rolex.jpg"
 import Cookies from "js-cookie"
 import CryptoJs from "crypto-js"
+import { useNavigate } from "react-router-dom"
+import HomeProducts from "../Compoents/HomeProducts"
+
+
+
+
 
 export default function Home() {
 
@@ -11,6 +17,8 @@ export default function Home() {
     const url = import.meta.env.VITE_URL
     const token = Cookies.get("User Token")
     const secr = import.meta.env.VITE_SECRETKEY
+    const navigate = useNavigate()
+
 
     useEffect(() => {
         fetch(`${url}api/profile`, {
@@ -28,6 +36,10 @@ export default function Home() {
             Cookies.set("User_Details_id", id, { expires: 5 / 24 })
         }).catch((err) => console.log(err))
     }, [])
+
+
+
+
 
     return (
         <>
@@ -66,10 +78,12 @@ export default function Home() {
                 <div data-aos="fade-up"
                     data-aos-duration="1000" className="w-full lg:w-[50%] overflow-hidden">
 
-                    <div className="relative top-0" >
-                        <img src="https://kalles-5-3.myshopify.com/cdn/shop/files/women-collection.jpg?v=1765269463&width=600" alt="" className="w-full lg:w-[100%] h-[250px] md:h-[615px] object-cover hover:scale-[1.1] transition-all duration-500" />
-                        <h1 className="absolute bottom-0 w-auto h-auto p-3 m-2 bg-white text-black hover:bg-black hover:text-white transition-all start-[40%] lg:start-[43%]">GetItems</h1>
-                    </div>
+                    <a href="/products">
+                        <div className="relative top-0" >
+                            <img src="https://kalles-5-3.myshopify.com/cdn/shop/files/women-collection.jpg?v=1765269463&width=600" alt="" className="w-full lg:w-[100%] h-[250px] md:h-[615px] object-cover hover:scale-[1.1] transition-all duration-500" />
+                            <h1 onClick={() => navigate("/products")} className="absolute bottom-0 w-auto h-auto p-3 m-2 bg-white text-black hover:bg-black hover:text-white transition-all start-[40%] lg:start-[43%]">GetItems</h1>
+                        </div>
+                    </a>
 
                 </div>
 
@@ -77,24 +91,35 @@ export default function Home() {
 
                     <div className="flex flex-col gap-3 w-full lg:w-[220px] h-full overflow-hidden">
 
-                        <div className="relative top-0">
-                            <img src="https://kalles-5-3.myshopify.com/cdn/shop/files/Withings-vert.jpg?v=1765269463" alt="" className="w-full h-[250px] md:h-[300px] object-cover hover:scale-[1.1] transition-all duration-500" />
-                            <h1 className="absolute bottom-0 w-auto h-auto p-3 m-2 bg-white text-black hover:bg-black hover:text-white transition-all start-[28%]">GetItems</h1>
-                        </div>
-                        <div className="relative top-0">
-                            <img src="https://kalles-5-3.myshopify.com/cdn/shop/files/i2.jpg?v=1765269463" alt="" className="w-full h-[250px] md:h-[300px] object-cover hover:scale-[1.1] transition-all duration-500" />
-                            <h1 className="absolute bottom-0 w-auto h-auto p-2 m-2 bg-white text-black  hover:bg-black hover:text-white transition-all start-[28%] ">GetItems</h1>
-                        </div>
+                        <a href="/products">
+                            <div className="relative top-0">
+                                <img src="https://kalles-5-3.myshopify.com/cdn/shop/files/Withings-vert.jpg?v=1765269463" alt="" className="w-full h-[250px] md:h-[300px] object-cover hover:scale-[1.1] transition-all duration-500" />
+                                <h1 onClick={() => navigate("/products")} className="absolute bottom-0 w-auto h-auto p-3 m-2 bg-white text-black hover:bg-black hover:text-white transition-all start-[28%]">GetItems</h1>
+                            </div>
+                        </a>
+
+                        <a href="/products">
+                            <div className="relative top-0">
+                                <img src="https://kalles-5-3.myshopify.com/cdn/shop/files/i2.jpg?v=1765269463" alt="" className="w-full h-[250px] md:h-[300px] object-cover hover:scale-[1.1] transition-all duration-500" />
+                                <h1 onClick={() => navigate("/products")} className="absolute bottom-0 w-auto h-auto p-2 m-2 bg-white text-black  hover:bg-black hover:text-white transition-all start-[28%] ">GetItems</h1>
+                            </div>
+                        </a>
                     </div>
 
                     <div className="w-full lg:w-[310px] lg:h-[615px] overflow-hidden">
-                        <div className="relative top-0">
-                            <img src="https://kalles-5-3.myshopify.com/cdn/shop/files/accessori.jpg?v=1765269463" alt="" className="w-full h-[515px] md:h-[615px] object-cover hover:scale-[1.1] transition-all duration-500 z-1 " />
-                            <h1 className="absolute bottom-0 start-[28%] lg:start-[34%] w-auto h-auto p-2 m-2 bg-white text-black  hover:bg-black hover:text-white transition-all">GetItems</h1>
-                        </div>
+                        <a href="/products">
+                            <div className="relative top-0">
+                                <img src="https://kalles-5-3.myshopify.com/cdn/shop/files/accessori.jpg?v=1765269463" alt="" className="w-full h-[515px] md:h-[615px] object-cover hover:scale-[1.1] transition-all duration-500 z-1 " />
+                                <h1 onClick={() => navigate("/products")} className="absolute bottom-0 start-[28%] lg:start-[34%] w-auto h-auto p-2 m-2 bg-white text-black  hover:bg-black hover:text-white transition-all">GetItems</h1>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
+
+            <HomeProducts/>
+
+
         </>
     )
 }
