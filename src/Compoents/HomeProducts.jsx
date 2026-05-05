@@ -1,14 +1,17 @@
 import useGets from "../Hooks/UseGet"
 import Loading from "../Compoents/Loading"
+import {useNavigate} from "react-router-dom"
 
 export default function HomeProducts() {
 
+    const navigate = useNavigate()
     const { data, isLoading, isError } = useGets('products/get')
     if (isLoading) return <Loading />
 
     if (isError) return <h1>Something Wents Wrong</h1>
 
     let slice_data = data.data.slice(0, 4)
+
 
     return (
         <>
@@ -46,7 +49,7 @@ export default function HomeProducts() {
                 </>
             }
 
-            <div className="flex justify-center items-center m-5"><button className="text-center w-[150px] h-[40px] bg-black text-white rounded-lg">More Products</button></div>
+            <div className="flex justify-center items-center m-5"><button onClick={()=>navigate("/products")} className="text-center w-[150px] h-[40px] bg-black text-white rounded-lg">More Products</button></div>
         </>
     )
 }

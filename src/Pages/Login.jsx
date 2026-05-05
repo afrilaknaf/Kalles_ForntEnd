@@ -24,7 +24,7 @@ export default function Login() {
         },
         onSuccess:(data)=>{
             toast.success(data.msg)
-            Cookies.set("User Token",data.token,{expires:1})
+            Cookies.set("User_Token",data.token,{expires:1})
             email.current.value=""
             password.current.value=""
             setTimeout(()=>{

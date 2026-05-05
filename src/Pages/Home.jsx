@@ -9,24 +9,59 @@ import PremiumProducts from "./PremiumProducts"
 import Car from "../assets/Car.svg"
 import Gift from "../assets/Gift.svg"
 import Diamond from "../assets/Diamond.svg"
+import { toast } from "react-toastify"
 
 
 
 
 export default function Home() {
 
+    const navigate = useNavigate()
+
     let obj = [{ name: "vi", srcs: Videos }, { name: "im", srcs: banner }]
     let [change, setChange] = useState(obj[0])
     const url = import.meta.env.VITE_URL
-    const token = Cookies.get("User Token")
+    const token = Cookies.get("User_Token")
     const secr = import.meta.env.VITE_SECRETKEY
-    const navigate = useNavigate()
+    const blog = [
+        {
+            image:"https://kalles-5-3.myshopify.com/cdn/shop/articles/pexels-pixabay-51396.webp?v=1765955180&width=1920",
+            title:"Vintage Pocket Watches Hanging on Chains",
+            date:"By admin on December 9, 2025",
+            para1:"Hanging chain watches combine timeless craftsmanship with a bold sense of style, making them a standout accessory for those who appreciate classic elegance. Inspired by vintage pocket watches, these timepieces are designed to be worn as a statement—either draped across the neck or styled with layered chains. Their intricate dials, polished cases, and detailed engravings reflect a heritage of precision, while modern designs bring a fresh edge to this iconic look",
+            para2:"What sets hanging chain watches apart is their versatility. They effortlessly transition from formal occasions to casual outfits, adding a touch of sophistication without feeling outdated. Whether paired with tailored attire or streetwear, these watches elevate your overall appearance. Many designs also feature premium materials such as stainless steel, gold plating, and sapphire glass, ensuring durability along with refined aesthetics.",
+            para3:"Beyond fashion, hanging chain watches symbolize individuality and personal expression. They are more than just timekeeping devices—they tell a story of tradition, luxury, and confidence. Perfect as a gift or a personal investment, these watches appeal to collectors and style enthusiasts alike. With their unique charm and enduring appeal, hanging chain watches continue to redefine how we wear and experience time."
+        },
+        {
+           image:"https://kalles-5-3.myshopify.com/cdn/shop/articles/pexels-ferarcosn-190819.webp?v=1766021685&width=1920",
+            title:"Elegant Metal Watch with Classic Design and Multi-functional Dial",
+            date:"By admin on December 9, 2025",
+            para1:"Analog watches represent the essence of traditional timekeeping, combining heritage design with refined craftsmanship. Characterized by their classic hour and minute hands, these watches often feature beautifully detailed dials, Roman numerals, or minimalist markers that highlight elegance and simplicity. From luxury dress pieces to everyday wear, analog watches carry a timeless appeal that never goes out of style, making them a staple for those who value sophistication.",
+            para2:"One of the biggest strengths of analog watches is their versatility and aesthetic charm. They complement both formal and casual outfits, effortlessly enhancing your overall look. Crafted with premium materials such as stainless steel, leather straps, and sapphire crystal, many analog watches are built to last while maintaining their polished appearance. Their mechanical or quartz movements also reflect the intricate engineering behind each piece, adding to their appeal for watch enthusiasts.",
+            para3:"Beyond functionality, analog watches symbolize tradition, precision, and personal style. They are often seen as more than just accessories—they are expressions of taste and identity. Whether passed down through generations or chosen as a statement piece, analog watches continue to hold emotional and cultural value. With their enduring design and classic feel, they remain a preferred choice for those who appreciate timeless elegance." 
+        }
+        ,{
+            image:"https://kalles-5-3.myshopify.com/cdn/shop/articles/blog-3.webp?v=1765858804&width=1200",
+            title:"SPRING – SUMMER TRENDING 2026",
+            date:"By admin on December 9, 2025",
+            para1:"Digital watches bring a modern approach to timekeeping, focusing on functionality, accuracy, and convenience. Featuring electronic displays that show time in numeric format, these watches are designed for clarity and ease of use. Many digital watches go beyond basic timekeeping, offering features like alarms, stopwatches, backlighting, and even fitness tracking, making them highly practical for everyday life.",
+            para2:"What makes digital watches stand out is their performance-driven design. They are often lightweight, durable, and built for active lifestyles, making them ideal for sports, outdoor activities, and daily wear. With materials like resin, rubber, and shock-resistant builds, digital watches are designed to withstand tough conditions while maintaining reliable performance. Their straightforward interface also makes them user-friendly for people of all ages.",
+            para3:"In addition to practicality, digital watches represent innovation and modern style. They appeal to those who prioritize functionality without compromising on design, as many models now feature sleek, futuristic aesthetics. Whether used for workouts, travel, or daily routines, digital watches offer a perfect blend of technology and convenience. With their advanced features and contemporary look, they continue to evolve as essential accessories in today’s fast-paced world."
+        }
+    ]
+    
 
 
     useEffect(() => {
+
+        if(!token){
+            toast.error("Please Login!")
+            return
+        }
+
         fetch(`${url}api/profile`, {
             method: "GET",
-            headers: { "Authorization": `Bearer ${token}`, "Content-type": "Application/json" }
+            headers: { "Authorization": `Bearer ${token}`, "Content-type": "application/json" }
         }).then((res) => res.json()).then((res) => {
             let name = CryptoJs.AES.encrypt(res.exist.Name, secr).toString()
             let email = CryptoJs.AES.encrypt(res.exist.Email, secr).toString()
@@ -151,9 +186,26 @@ export default function Home() {
                 </div>
             </div>
 
-            <div>
+            <div  className="w-full h-auto flex justify-center items-center flex-col">
                 <h1 className="text-3xl font-bold">Latest From Our Blog</h1>
-                <p>The freshest and most exciting news</p>
+                <p className="text-lg text-[#8c8c8c] my-5">The freshest and most exciting news</p>
+
+                <div className="w-full h-auto flex flex-col md:flex-row justify-center items-center my-5">
+                    {
+                       blog.map((item,index)=>(
+                        <div key={index} className="w-[full] md:w-[300px] lg:w-[450px] px-3 h-[500px] md:h-[350px] lg:h-[400px] flex flex-col gap-3">
+                            <div className="w-full h-[300px] md:h-[180px] lg:w-[400px] lg:h-[235px] overflow-hidden ">
+                                <a onClick={()=>navigate(`/blog/${item}`)}>
+                                    <img src={item.image} className="w-full h-[300px] md:h-[180px] lg:w-[400px] lg:h-[235px] object-cover transition-all hover:scale-[1.2] " alt="" />
+                                </a>
+                            </div>
+                            <h1 className="font-bold text-lg">{item.title}</h1>
+                            <span className="">{item.date}</span>
+                            <p className="line-clamp-3 md:line-clamp-1 lg:line-clamp-2 text-justify">{item.para1}</p>
+                        </div>
+                       )) 
+                    }
+                </div>
             </div>
         </>
     )

@@ -11,6 +11,8 @@ import AOS from "aos"
 import "aos/dist/aos.css"
 import { useEffect } from "react"
 import Preimum from './Compoents/Preimum'
+import ScrollTop from './Compoents/scrollTop'
+import Blog from './Compoents/Blog'
 
 
 function App() {
@@ -26,12 +28,14 @@ function App() {
     <>
       <div className='overflow-x-hidden'>
         <Navbar />
+        <ScrollTop/>
         <Routes>
           <Route index element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/products' element={<Products />} />
           <Route path='/preimum' element={<Preimum/>} />
+          <Route path='/blog/:id' element={<Blog/>}/>
         </Routes>
         <Footer />
         <MobileMenu />
