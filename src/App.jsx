@@ -13,6 +13,7 @@ import { useEffect } from "react"
 import Preimum from './Compoents/Preimum'
 import ScrollTop from './Compoents/scrollTop'
 import Blog from './Compoents/Blog'
+import BlogPage from './Pages/BlogPage'
 
 
 function App() {
@@ -35,11 +36,10 @@ function App() {
           <Route path='/signup' element={<Signup />} />
           <Route path='/products' element={<Products />} />
           <Route path='/preimum' element={<Preimum/>} />
-          <Route path='/blog/:id' element={<Blog/>}/>
+          <Route path='/blog/:id/:slug' element={<BlogPage/>}/>
         </Routes>
         <Footer />
         <MobileMenu />
-
       </div>
     </>
   )

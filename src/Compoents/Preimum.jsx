@@ -3,7 +3,7 @@ import useGets from "../Hooks/UseGet"
 
 export default function Preimum(){
 
-    const {data,isLoading,isError} = useGets(`products/get`)
+    const {data,isLoading,isError} = useGets(`products/get`,"products")
 
     if(isLoading) return <Loading/>
 

@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom"
 export default function HomeProducts() {
 
     const navigate = useNavigate()
-    const { data, isLoading, isError } = useGets('products/get')
+    const { data, isLoading, isError } = useGets('products/get',"products")
     if (isLoading) return <Loading />
 
     if (isError) return <h1>Something Wents Wrong</h1>

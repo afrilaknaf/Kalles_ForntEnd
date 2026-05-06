@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom"
 export default function PremiumProducts(){
 
     const navigate = useNavigate()
-    const {data,isLoading,isError} = useGets(`products/get`)
+    const {data,isLoading,isError} = useGets(`products/get`,"products")
 
     if(isLoading) return <Loading/>
 

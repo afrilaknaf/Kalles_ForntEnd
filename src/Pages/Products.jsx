@@ -5,7 +5,7 @@ export default function Products() {
 
     
 
-    const {isLoading,isError,data}=useGets(`products/get`)
+    const {isLoading,isError,data}=useGets(`products/get`,"products")
 
     if(isLoading) return <Loading/>
 
