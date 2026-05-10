@@ -39,6 +39,7 @@ function App() {
           <Route path='/signup' element={<Signup />} />
           <Route path='/products' element={<Products />} />
           <Route path='/preimum' element={<PremiumProducts />} />
+          <Route path='/blog' element={<Blog/>}/>
           <Route path='/blog/:id/:slug' element={<BlogPage />} />
           <Route path='/quick/:id' element={<QuickView />} />
           <Route path="/carousel" element={<Carousel />} />

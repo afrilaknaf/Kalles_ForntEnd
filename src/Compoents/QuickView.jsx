@@ -14,7 +14,7 @@ export default function QuickView() {
 
     if (isError) return <h1>Something Wents Wrong</h1>
 
-    console.log(data)
+    
 
     const datas = data.data
 
@@ -26,7 +26,7 @@ export default function QuickView() {
                         datas.video === "https://your-video-url.webm" ? <>
                             <img src={datas.images[1]} className="w-full h-[100%] obect-cover absolute top-0" alt="Wacthes images" />
                         </> : <>
-                            <video src={datas.video} loop muted autoplay className="w-full h-[100%] object-cover absolute top-0"></video>
+                            <video src={datas.video} loop muted autoPlay className="w-full h-[100%] object-cover absolute top-0"></video>
                         </>
                     }
                     <div className="absolute bottom-30 ml-5">

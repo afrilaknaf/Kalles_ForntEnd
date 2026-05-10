@@ -36,7 +36,7 @@ export default function Preimum() {
                                     <button className="w-9 h-9 hidden group-hover:block text-xl rounded-full border absolute top-0 mt-5 ml-2">
                                         <i className="ri-heart-line"></i>
                                     </button>
-                                    <button className="w-9 h-9 text-xl block lg:hidden rounded-full border absolute top-45 end-0 mr-5"><i class="ri-eye-line"></i></button>
+                                    <button onClick={()=>navigate(`/quick/${item._id}`)} className="w-9 h-9 text-xl block lg:hidden rounded-full border absolute top-45 end-0 mr-5"><i class="ri-eye-line"></i></button>
                                     <button className="w-9 h-9 text-xl block lg:hidden bg-[#C91F28] text-white rounded-full border absolute top-55 mt-3 end-0 mr-5"><i class="ri-shopping-cart-2-line"></i></button>
                                     <div className="w-full h-full flex flex-col gap-3 hidden lg:block">
                                         <button onClick={()=>navigate(`/quick/${item._id}`)} className="w-full h-[30px] opacity-0 lg:group-hover:opacity-100 transition-all duration-300 border bg-white text-black rounded-2xl font-bold">

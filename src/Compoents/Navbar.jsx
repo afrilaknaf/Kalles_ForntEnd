@@ -39,7 +39,7 @@ export default function Navbar() {
                         <li onClick={()=>navigate("/")} className="text-[18px] font-normal hover:text-[#C91F28] transition-all">Home</li>
                         <li onClick={()=>navigate("/products")} className="text-[18px] font-normal hover:text-[#C91F28] transition-all">Products</li>
                         <li className="text-[18px] font-normal hover:text-[#C91F28] transition-all">Sale</li>
-                        <li className="text-[18px] font-normal hover:text-[#C91F28] transition-all">Blog</li>
+                        <li onClick={()=>navigate("/blog")} className="text-[18px] font-normal hover:text-[#C91F28] transition-all">Blog</li>
                         <li className="text-[18px] font-normal hover:text-[#C91F28] transition-all">Contact</li>
                     </ul>
 
