@@ -1,10 +1,12 @@
 import useGets from "../Hooks/UseGet"
 import Loading from "../Compoents/Loading"
 import { useNavigate } from "react-router-dom"
+import useWishpost from "../Hooks/UseWishlistPost"
 
 export default function Products() {
 
     const navigate = useNavigate()
+    const mutation = useWishpost()
 
     const { isLoading, isError, data } = useGets(`products/get`, "products")
 
