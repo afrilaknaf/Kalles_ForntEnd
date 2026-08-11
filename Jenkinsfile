@@ -6,6 +6,18 @@ pipeline {
             Version="${env.BUILD_NUMBER}"
         }
 
+        options{
+            timestamps()
+            timeout(time:5,unit:"MINUTES")
+            disableConcurrentBuilds()
+            buildDiscarder(
+                logRotator(numToKeepStr:"3")
+            )
+            skipDefaultCheckout()
+            retry(5)
+            quietPeriod(30)
+        }
+
 
         stages{
             stage("Git Checkout"){
