@@ -52,6 +52,8 @@ function App() {
         <Footer />
         <MobileMenu />
       </div>
+
+      
     </>
   )
 }
