@@ -107,7 +107,7 @@ export default function Navbar() {
 
                 <ul className="flex flex-col gap-3 ">
                     <li className="text-black p-3 hover:text-[#C91F28] border-b border-[#C91F28]">Home</li>
-                    <li className="text-black p-3 hover:text-[#C91F28] border-b border-[#C91F28]">Products</li>
+                    <li className="text-black p-3 hover:text-[#C91F28] border-b border-[#C91F28]">Product</li>
                     <li className="text-black p-3 hover:text-[#C91F28] border-b border-[#C91F28]">Sale</li>
                     <li className="text-black p-3 hover:text-[#C91F28] border-b border-[#C91F28]">Blog</li>
                     <li className="text-black p-3 hover:text-[#C91F28] border-b border-[#C91F28]">Contact</li>
